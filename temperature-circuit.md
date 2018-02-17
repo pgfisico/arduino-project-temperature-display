@@ -22,3 +22,20 @@ Important info: this note needs to be highlighted
 Important info: this note needs to be highlighted
 {% endhint %}
 
+
+
+> **[info] For info**
+>
+> Use this for infomation messages.
+
+> **[warning] For warning**
+>
+> Use this for warning messages.
+
+> **[warning] For warning**
+>
+> Use this for warning messages.
+
+> **[success] For info**
+>
+> Use this for success messages.
