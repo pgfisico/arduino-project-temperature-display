@@ -1,3 +1,9 @@
+# TITLE
+
+Before building the display, you will connect the temperature sensor to the Arduino and display the temperature on the ****
+
+Construct the following circuit.
+
 Building temperature circuit \(on jumpers?\)
 
 {% hint style='info' %}
@@ -12,7 +18,7 @@ Important info: this note needs to be highlighted
 Important info: this note needs to be highlighted
 {% endhint %}
 
-{% hint style='warning' %}
+{% hint style='working' %}
 Important info: this note needs to be highlighted
 {% endhint %}
 
