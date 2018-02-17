@@ -5,5 +5,6 @@
 * [Temperature - Code](temperature-code.md)
 * [Display - Circuit](display.md)
 * Display - Code
-* Combined Code
+* [Combined Code](combined-code.md)
+* [Test page](test-page.md)
 

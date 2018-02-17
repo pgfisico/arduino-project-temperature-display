@@ -1,47 +1,20 @@
 # TITLE
 
-Before building the display, you will connect the temperature sensor to the Arduino and display the temperature on the ****
+Before building the display, you will connect the temperature sensor to the Arduino and display the temperature on the Serial Monitor in the Arduino IDE.
 
-Construct the following circuit.
+-- The temperature sensor is ESD sensitive --
 
-Building temperature circuit \(on jumpers?\)
+Construct the following circuit. The 5V and GND on the lower rail will be used later for the display.
 
-{% hint style='info' %}
-Important info: this note needs to be highlighted
-{% endhint %}
+Note that the temperature sensor's pins have the following functions
+...
+Flat side, L to R
 
-{% hint style='tip' %}
-Important info: this note needs to be highlighted
-{% endhint %}
+![](/assets/MCP9701A_TO-92_Pinout.PNG)
 
-{% hint style='danger' %}
-Important info: this note needs to be highlighted
-{% endhint %}
+Capacitor should be placed as close as possible to the temperature sensor.
 
-{% hint style='working' %}
-Important info: this note needs to be highlighted
-{% endhint %}
+-- What are capacitors
+---- Why is it safe to short the voltage rails
 
-
-
-> **[info] For info**
->
-> Use this for infomation messages.
-
-ytj
-
-> **[warning] For warning**
->
-> Use this for warning messages.
-
-tj
-
-> **[warning] For warning**
->
-> Use this for warning messages.
-
-//
-
-> **[success] For info**
->
-> Use this for success messages.
+![](/assets/temperature_sensor_breadboard.png)
