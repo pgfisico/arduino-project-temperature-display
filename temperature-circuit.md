@@ -13,10 +13,6 @@ In the circuit pictured below, the flat side of the temperature sensor is facing
 
 The blue component behind the temperature sensor is a 0.1&micro;F (0.1 microfarad) capacitor. It should be placed as close as possible to the temperature sensor, and is connected across the power and ground pins of the sensor.
 
-## What's a capacitor?
-
-
-
 > #### Info::What's a capacitor?
 > A capacitor is a circuit component which stores electrical energy in an electric field. A simple capacitor could be built by placing two metal plates parallel to each other, a small distance apart. In between the plates, there is an insulator (known as a dielectric).
 >
@@ -25,7 +21,6 @@ The blue component behind the temperature sensor is a 0.1&micro;F (0.1 microfara
 > The capacitor you are using in this circuit can be connected either way. It does not matter which pin is connected to 5 volts and which is connected to ground. Note that other types of capacitors are polarized, meaning there is a specific way they must be connected.
 
 ![](/assets/temperature_sensor_breadboard.png)
-[View Original Size](/assets/temperature_sensor_breadboard.png)
 
 > #### Success::Check your Circuit
 > Before continuing, check your circuit to confirm it is wired correctly
