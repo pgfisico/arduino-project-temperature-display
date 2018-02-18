@@ -1,21 +1,33 @@
 # Display Circuit
 
-You will now build the display, so that the temperature can be displayed on it rather than the computer.
+You will now build the display, so that the temperature can be displayed on it rather than the computer. The display will be made up of the following components.
+
+## 7-Segment Display
+
+- Common a/C
+- Photo of segment labels, individual LEDs
+
+## Shift Register
+
+
+- Notch, pin numbering
+- Why used
+- Internal logic
+-- OE???
+-- Chaining???
+
 
 Disconnect the Arduino board from the computer and construct the circuit pictured on this page.
+*** ADD-ON
+
+** WARN - breaking pins on ICs
 
 > #### Warning::ESD Sensitive
-> The **** is ESD sensitive
+> The 7-segment displays and shift registers are ESD sensitive
 
-The blue component behind the temperature sensor is a 0.1&micro;F (0.1 microfarad) capacitor. It should be placed as close as possible to the temperature sensor, and is connected across the power and ground pins of the sensor.
+-- NOte that caps are reused here - close to IC
 
-## What's a capacitor?
 
-> #### Info::View Original Size
-> Click on the circuit pictures to see them at their original size
-
-![](/assets/temperature_sensor_breadboard.png)
-[View Original Size](assets/temperature_sensor_breadboard.png)
 
 > #### Success::Check your Circuit
 > Before continuing, check your circuit to confirm it is wired correctly
