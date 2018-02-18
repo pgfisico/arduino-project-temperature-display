@@ -3,7 +3,6 @@
 You will now build the display, so that the temperature can be displayed on it rather than the computer. The display will be made up of the following components.
 
 > #### Warning::ESD Sensitive
->
 > The 7-segment displays and shift registers are ESD sensitive
 
 ## 7-Segment Display
@@ -63,7 +62,6 @@ If you were to transmit this message in parallel, you could use eight pieces of 
 | 8 | Low |
 
 > #### Info::Universal Serial Bus
->
 > The Universal Serial Bus \(USB\) transmits data serially. It does however use two wires for _differential signaling_ instead of a single wire to protect the signals from interference. This is important when the signals travel over long cables that are near other cables.
 
 Returning to the shift register you will use to control the displays, you might be able to guess what a serial-in, parallel-out shift register is now that you know what serial and parallel communication is. The shift register uses a single wire to receive data and outputs multiple pieces of data in parallel. The shift register you are using is an 8-bit shift register, so it has 8 parallel outputs. This is enough outputs to control all the segments on a single display.
@@ -72,11 +70,20 @@ The shift register is called a shift register because it shifts the single seria
 
 ![](/assets/SIPO-Shift-Register.png)
 
-The shift register uses the power supply voltage as a high voltage (in this case, 5 volts), and ground as a low voltage (recall ground is the reference point for voltage, so it has the value of 0 volts). Since the grounds of the Arduino and the shift register are connected together, both the Arduino and shift register have a common point of reference for 0 volts.
+The shift register you are using in this project uses the power supply voltage as a high voltage (in this case, 5 volts), and ground as a low voltage (recall ground is the reference point for voltage, so it has the value of 0 volts). Since the grounds of the Arduino and the shift register are connected together, both the Arduino and shift register have a common point of reference for 0 volts.
 
 ### Clock Signals
 
--- TODO
+After reading the previous section about serial and parallel communication, you might be wondering how you synchronize the transmitter and receiver so that the receiver measures the voltage at the right time. If the receiver was measuring slower than the transmitter was transmitting, it would miss portions of the message. It might also measure while the sender is changing the voltage from low to high or high to low, and could measure the opposite of what the sender intended because the voltage is somewhere between the low and high values. Alternatively, if the receiver is measuring faster than the transmitter is transmitting, it could receive extra parts of the message that the transmitter doesn't intend to send. It could also end up measuring when the voltage is changing as described previously.
+
+To synchronize digital circuits, a clock signal is commonly used. A clock signal is shown in the timing diagram below. Time is shown from left to right. The green line represents the voltage of the clock signal. The horizontal dashed yellow lines indicate the low and high voltage levels. When the green line is at the same level as the bottom yellow line, the clock signal is at the low voltage, and when it is at the same level as the top yellow line, it is at the high voltage.
+
+The shift register you are using in this project is _positive-edge triggered_. This means that the shift register shifts the serial input into the output every time the clock signal changes from low to high. These transitions are marked using white arrows in the timing diagram. There are numerous other specific timing constraints needed for the shift register to operate properly, but you don't need to worry about these. Look up the data sheet for the shift register you're using if you're interested in learning more.
+
+![](/assets/Clock-Signal.png)
+
+> #### Info::Universal Serial Bus
+> The Universal Serial Bus \(USB\) does not use a clock signal. Instead, it modifies the serial data signal so that it doesn't stay high or low for too long. This means that changes from low to high or high to low occur frequently enough for the receiver to perform _clock recovery_.
 
 ### Storage...????
 
@@ -100,6 +107,3 @@ _\*_ ADD-ON to existing!!!
 > #### Success::Check your Circuit
 >
 > Before continuing, check your circuit to confirm it is wired correctly
-
-
-
