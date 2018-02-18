@@ -1,3 +1,10 @@
 {
     "plugins": ["callouts"]
+    "pluginsConfig":
+    {
+        "callouts":
+        {
+            "showTypeInHeader": false
+        }
+    }
 }
