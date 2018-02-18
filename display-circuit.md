@@ -63,25 +63,32 @@ If you were to transmit this message in parallel, you could use eight pieces of 
 | 8 | Low |
 
 > #### Info::Universal Serial Bus
-> The Universal Serial Bus (USB) transmits data serially. It does however use two wires for _differential signaling_ instead of a single wire to protect the signals from interference. This is important when the signals travel over long cables that are near other cables.
+>
+> The Universal Serial Bus \(USB\) transmits data serially. It does however use two wires for _differential signaling_ instead of a single wire to protect the signals from interference. This is important when the signals travel over long cables that are near other cables.
 
-Returning to the shift register you will use to control the displays, you might be able to guess what a serial-in, parallel-out shift register is now that you know what serial and parallel communication is. The shift register uses a single wire to receive data and outputs multiple pieces of data in parallel. The shift register you are using is an 8-bit shift register, so it has 8 parallel outputs. The shift register is called a shift register because it shifts the single serial input through each of the parallel outputs, similar to how a message is passed between people playing telephone. This is shown in the diagram below, where the message from the previous example is sent to the shift register. Initially, the shift register is outputting the values in gray at time 0. At time 0, the serial input is also set to a low voltage. At time 1, the red serial input is shifted into output 1. At time 1, the serial input is also changed to a high voltage. At time 2, the orange serial input is shifted into output 1, and the red input is shifted into output 2. This continues until all eight outputs have the desired high or low voltage. Although not shown in the diagram, the shift register also has a serial output that will have the previous value of output 8 every time a new input is shifted in. This output allows you to connect multiple shift registers together, expanding the number of outputs while continuing to only use the single serial input.
+Returning to the shift register you will use to control the displays, you might be able to guess what a serial-in, parallel-out shift register is now that you know what serial and parallel communication is. The shift register uses a single wire to receive data and outputs multiple pieces of data in parallel. The shift register you are using is an 8-bit shift register, so it has 8 parallel outputs. This is enough outputs to control all the segments on a single display.
+
+The shift register is called a shift register because it shifts the single serial input through each of the parallel outputs, similar to how a message is passed between people playing telephone. This is shown in the diagram below, where the message from the previous example is sent to the shift register. Initially, the shift register is outputting the values in gray at time 0. At time 0, the serial input is also set to a low voltage. At time 1, the red serial input is shifted into output 1. At time 1, the serial input is also changed to a high voltage. At time 2, the orange serial input is shifted into output 1, and the red input is shifted into output 2. This continues until all eight outputs have the desired high or low voltage. Although not shown in the diagram, the shift register also has a serial output that will have the previous value of output 8 every time a new input is shifted in. This output allows you to connect multiple shift registers together, expanding the number of outputs while continuing to only use the single serial input.
 
 ![](/assets/SIPO-Shift-Register.png)
 
+The shift register uses the power supply voltage as a high voltage (in this case, 5 volts), and ground as a low voltage (recall ground is the reference point for voltage, so it has the value of 0 volts). Since the grounds of the Arduino and the shift register are connected together, both the Arduino and shift register have a common point of reference for 0 volts.
+
 ### Clock Signals
+
 -- TODO
 
 ### Storage...????
--- Internal diagram (storage/shift)
+
+-- Internal diagram \(storage/shift\)
 
 ### Dual In-Line Package
+
 * Notch, pin numbering
   -- OE / Tri-state
   -- Chaining???
 
 -- TIMING --
-  
 
 Disconnect the Arduino board from the computer and construct the circuit pictured on this page.  
 _\*_ ADD-ON to existing!!!
