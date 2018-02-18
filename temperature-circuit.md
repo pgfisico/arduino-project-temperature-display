@@ -7,6 +7,10 @@ Disconnect the Arduino board from the computer and construct the circuit picture
 > #### Warning::ESD Sensitive
 > The temperature sensor is ESD sensitive
 
+## Temperature Sensor
+The temperature sensor you will use in this project indicates the measured temperature by changing the voltage on one of its pins. You can measure the voltage on this pin by connecting it to the analog input pins on the Arduino. Using the Arduino's analog to digital converter (ADC), you can use the numerical voltage value and information from the sensor manufacturer to calculate the temperature.
+
+## Circuit Diagram
 In the circuit pictured below, the flat side of the temperature sensor is facing the empty half of the breadboard. It is important to orient the the temperature sensor this way so that you do not connect the power backwards. With the flat side of the sensor facing you, the pins have the following functions from left to right: power, sensor output, ground. See the pin diagram below from the sensor's datasheet below.
 
 ![](/assets/MCP9701A_TO-92_Pinout.PNG)
