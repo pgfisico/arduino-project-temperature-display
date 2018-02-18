@@ -16,7 +16,7 @@ The blue component behind the temperature sensor is a 0.1&micro;F (0.1 microfara
 > #### Info::View Original Size
 > Click on the circuit pictures to see them at their original size
 
-[![](/assets/temperature_sensor_breadboard.png)](/assets/temperature_sensor_breadboard.png "View Original")
+[![](/assets/temperature_sensor_breadboard.png)](/assets/temperature_sensor_breadboard.png)
 
 ## What's a capacitor?
 
