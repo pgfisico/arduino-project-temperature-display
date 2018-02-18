@@ -1,5 +1,9 @@
 {
-    "plugins": ["callouts"],
+    "plugins": [
+        "callouts",
+        "image-wrapper"
+    ],
+    
     "pluginsConfig":
     {
         "callouts":

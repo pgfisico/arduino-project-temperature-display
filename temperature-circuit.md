@@ -2,14 +2,12 @@
 
 Before building the display, you will connect the temperature sensor to the Arduino and display the temperature on the Serial Monitor in the Arduino IDE.
 
-Disconnect the Arduino board from the computer and construct the circuit pictured below. The 5V and ground connections to the bottom of the breadboard will be used later when building the display.
+Disconnect the Arduino board from the computer and construct the circuit pictured on this page. The 5V and ground connections to the bottom of the breadboard will be used later when building the display.
 
 > #### Warning::ESD Sensitive
 > The temperature sensor is ESD sensitive
 
-In the circuit pictured below, the flat side of the temperature sensor is facing the empty half of the breadboard. It is important to orient the the temperature sensor this way so that you do not connect the power backwards. With the flat side of the sensor facing you, the pins have the following functions from left to right: power, sensor output, ground.
-
-Alternatively??? see the diagram below from the sensor's datasheet. TODO compress
+In the circuit pictured below, the flat side of the temperature sensor is facing the empty half of the breadboard. It is important to orient the the temperature sensor this way so that you do not connect the power backwards. With the flat side of the sensor facing you, the pins have the following functions from left to right: power, sensor output, ground. See the pin diagram below from the sensor's datasheet below.
 
 ![](/assets/MCP9701A_TO-92_Pinout.PNG)
 
