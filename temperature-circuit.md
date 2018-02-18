@@ -15,7 +15,10 @@ Alternatively??? see the diagram below from the sensor's datasheet. TODO compres
 
 The blue component behind the temperature sensor is a 0.1&micro;F (0.1 microfarad) capacitor. It should be placed as close as possible to the temperature sensor, and is connected across the power and ground pins of the sensor.
 
-![](/assets/temperature_sensor_breadboard.png)
+> #### Info::View Original Size
+> Click on the circuit pictures to see them at their original size
+
+[![](/assets/temperature_sensor_breadboard.png)](/assets/temperature_sensor_breadboard.png "View Original")
 
 ## What's a capacitor?
 
