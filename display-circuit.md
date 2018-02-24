@@ -102,7 +102,7 @@ The SRCLK and RCLK signals are the clock signals for the shift register and stor
 
 The shift register you are using in this project comes in what is known as a Dual In-Line Package \(DIP\). A Dual In-Line Package consists of a rectangular part with two rows of parallel pins. The channel in the center of your breadboard is the correct size to allow the shift register to be placed with one row of pins on each side of the channel. Recall that these two halves of the breadboard are not electrically connected, meaning the rows of pins on the shift register are not connected. Dual In-Line Packages are popular when using breadboards because they are easy to place in the breadboard this way.
 
-> #### Warning::Be careful when inserting or removing DIPs from a breadboard
+> #### Warning::Be careful when Inserting or Removing DIPs from a Breadboard
 >
 > It is easy to bend or break some of the pins off the package if it is forced into a breadboard without all the pins being aligned with the holes, or if inserted or removed at an angle.
 >
@@ -131,16 +131,22 @@ An additional piece of information not mentioned in the above table is that when
 ## Circuit Diagram
 
 Disconnect the Arduino board from the computer and construct the circuit pictured on this page.  
+
 _\*_ ADD-ON to existing!!!
 
 \*\* INFO??
 Place the shift register in the breadboard in the exact position identified in the circuit diagram, so you do not have to move it later.
 
--- NOte that caps are reused here - close to IC
+-- NOte that caps are reused here - close to IC, add img with circles??
+
+Explain diagonal rresistors
+
+Provide labelled A-H outputs for shift register outs
+
+![](/assets/complete_circuit_breadboard.png)
 
 > #### Success::Check your Circuit
 >
-> Before continuing, check your circuit to confirm it is wired correctly
-
-
-
+> Before continuing, check your circuit to confirm it is wired correctly.
+>
+> This circuit has a lot of wiring and components that are placed close to each other. Ensure all the connections are correct and that there are no short circuits created by exposed conductors.
