@@ -85,9 +85,15 @@ The shift register you are using in this project is _positive-edge triggered_. T
 > #### Info::Universal Serial Bus
 > The Universal Serial Bus \(USB\) does not use a clock signal. Instead, it modifies the serial data signal so that it doesn't stay high or low for too long. This means that changes from low to high or high to low occur frequently enough for the receiver to perform _clock recovery_.
 
-### Storage...????
+### Storage Register
 
--- Internal diagram \(storage/shift\)
+The shift register you are using in this project actually has two separate registers, the shift register and a separate storage register. The storage register contains the high and low values that are actually output from the pins on the shift register, and the shift register provides inputs to the storage register. This arrangement means that the output on the shift register pins will not change while you shift in new data. The outputs will only change once you copy the data from the shift register to the storage register. This is useful for a display, because it prevents different segments from flickering while the display changes.
+
+You can see the two different registers in the logic diagram from the shift register's datasheet below. The logic diagram provides a description of how the shift register's inputs and outputs operate. You don't need to understand all the symbols in the diagram for this project. The shift register is the vertical row of boxes closest to the left, while the storage register is the vertical row of boxes on the right. Each box can store a single low or high signal. Note that all the boxes in the shift register are connected to the signal named SRCLK in the top left corner, while all the boxes in the storage register are connected to the signal named RCLK. You can also see that the connections in the shift register go between each box from top to bottom, while the storage register does not have these connections. Instead, each box in the storage register is connected to the corresponding box in the shift register.
+
+The SRCLK and RCLK signals are the clock signals for the shift register and storage register respectively. This means that SRCLK is used as the clock to shift new data into the shift register, while RCLK is used the clock to send data to the storage register. Data shifts through the shift register serially, while data is stored in the storage register in parallel. Positive edges in the RCLK signal cause the storage register to copy all eight values from the shift register to the storage register in parallel. When the data is copied into the storage register, the output on the pins of the shift register changes.
+
+![](/assets/SN74HC595N_Logic-Diagram.PNG)
 
 ### Dual In-Line Package
 
