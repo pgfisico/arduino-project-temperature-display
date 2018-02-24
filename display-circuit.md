@@ -102,6 +102,12 @@ The SRCLK and RCLK signals are the clock signals for the shift register and stor
 
 The shift register you are using in this project comes in what is known as a Dual In-Line Package \(DIP\). A Dual In-Line Package consists of a rectangular part with two rows of parallel pins. The channel in the center of your breadboard is the correct size to allow the shift register to be placed with one row of pins on each side of the channel. Recall that these two halves of the breadboard are not electrically connected, meaning the rows of pins on the shift register are not connected. Dual In-Line Packages are popular when using breadboards because they are easy to place in the breadboard this way.
 
+> #### Warning::Be careful when inserting or removing DIPs from a breadboard
+>
+> It is easy to bend or break some of the pins off the package if it is forced into a breadboard without all the pins being aligned with the holes, or if inserted or removed at an angle.
+>
+> Please ask for help if you have trouble inserting or removing DIPs from the breadboard. We have a tool that makes it easier to remove DIPs from the breadboard.
+
 Dual In-Line Packages usually have a notch or other marking to indicate which pin is pin number one. Pins are then numbered counterclockwise, starting from pin number one. You can see this numbering in the pin diagram from the shift register's datasheet below.
 
 ![](/assets/SN74HC595N_Pin-Diagram.PNG)
@@ -120,14 +126,15 @@ The following table explains the function of each pin on the shift register.
 | 10 | SRCLR | Shift register clear<br/><br/>The line above this pin's name indicates that it is _active low_. This means that connecting this pin to ground will reset all the data in the shift register to low values. |
 | 13 | OE | Output enable<br/><br/>The line above this pin's name indicates that it is _active low_. This means that connecting this pin to ground enables the shift register's output. If this pin is connected to the power supply voltage, the output pins of the shift register are disconnected and do not provide power. |
 
-An additional piece of information not mentioned in the above table, is that when joining multiple shift registers together, you should connect the SRCLK, RCLK, and SRCLR pins of all the shift registers together.
+An additional piece of information not mentioned in the above table is that when joining multiple shift registers together, you should connect the SRCLK, RCLK, and SRCLR pins of all the shift registers together.
 
 ## Circuit Diagram
 
 Disconnect the Arduino board from the computer and construct the circuit pictured on this page.  
 _\*_ ADD-ON to existing!!!
 
-\*\* WARN - breaking pins on ICs
+\*\* INFO??
+Place the shift register in the breadboard in the exact position identified in the circuit diagram, so you do not have to move it later.
 
 -- NOte that caps are reused here - close to IC
 
