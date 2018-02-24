@@ -112,12 +112,13 @@ The following table explains the function of each pin on the shift register.
 | :--- | :--- | :--- |
 | 16 | V~CC~ | Power supply |
 | 8 | GND | Ground |
-| 15, 1, 2, 3, 4, 5, 6, 7 | Q~A~, Q~B~, Q~C~, Q~D~, Q~E~, Q~E~, Q~F~, Q~G~  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
-|  |  |  |
+| 15, 1, 2, 3, 4, 5, 6, 7 | Q<sub>A</sub>, Q~B~, Q~C~, Q~D~, Q~E~, Q~E~, Q~F~, Q~G~ |  |
+| 14 | SER |  |
+| 9 | Q~H\`~ |  |
+| 11 | SRCLK |  |
+| 12 | RCLK |  |
+| 10 | SRCLR |  |
+| 13 | OE |  |
 
 * Notch, pin numbering
   -- OE / Tri-state
