@@ -110,11 +110,11 @@ The following table explains the function of each pin on the shift register.
 
 | **Pin Number** | **Pin Name** | **Function** |
 | :--- | :--- | :--- |
-| 16 | V~CC~ | Power supply |
+| 16 | V<sub>CC</sub> | Power supply |
 | 8 | GND | Ground |
-| 15, 1, 2, 3, 4, 5, 6, 7 | Q<sub>A</sub>, Q~B~, Q~C~, Q~D~, Q~E~, Q~E~, Q~F~, Q~G~ |  |
+| 15, 1, 2, 3, 4, 5, 6, 7 | Q<sub>A</sub>, Q<sub>B</sub>, Q<sub>C</sub>, Q<sub>D</sub>, Q<sub>E</sub>, Q<sub>F</sub>, Q<sub>G</sub>,  |  |
 | 14 | SER |  |
-| 9 | Q~H\`~ |  |
+| 9 | Q<sub>H'</sub> |  |
 | 11 | SRCLK |  |
 | 12 | RCLK |  |
 | 10 | SRCLR |  |
