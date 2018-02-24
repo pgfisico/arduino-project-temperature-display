@@ -112,19 +112,17 @@ The following table explains the function of each pin on the shift register.
 | :--- | :--- | :--- |
 | 16 | V<sub>CC</sub> | Power supply |
 | 8 | GND | Ground |
-| 15, 1, 2, 3, 4, 5, 6, 7 | Q<sub>A</sub>, Q<sub>B</sub>, Q<sub>C</sub>, Q<sub>D</sub>, Q<sub>E</sub>, Q<sub>F</sub>, Q<sub>G</sub>,  |  |
-| 14 | SER |  |
-| 9 | Q<sub>H'</sub> |  |
-| 11 | SRCLK |  |
-| 12 | RCLK |  |
-| 10 | SRCLR |  |
-| 13 | OE |  |
+| 15, 1, 2, 3, 4, 5, 6, 7 | Q<sub>A</sub>, Q<sub>B</sub>, Q<sub>C</sub>, Q<sub>D</sub>, Q<sub>E</sub>, Q<sub>F</sub>, Q<sub>G</sub>,  | Shift register outputs<br/><br/>Outputs are in alphabetical order. A is the most recently shifted in data while H is the oldest data. |
+| 14 | SER | Serial input |
+| 9 | Q<sub>H'</sub> | Serial output of data which is shifted out of the shift register<br><br>This output can be connected to the input of another shift register to join them together. |
+| 11 | SRCLK | Shift register clock |
+| 12 | RCLK | Storage register clock |
+| 10 | SRCLR | Shift register clear<br/><br/>The line above this pin's name indicates that it is _active low_. This means that connecting this pin to ground will reset all the data in the shift register to low values. |
+| 13 | OE | Output enable<br/><br/>The line above this pin's name indicates that it is _active low_. This means that connecting this pin to ground enables the shift register's output. If this pin is connected to the power supply voltage, the output pins of the shift register are disconnected and do not provide power. |
 
-* Notch, pin numbering
-  -- OE / Tri-state
-  -- Chaining???
+An additional piece of information not mentioned in the above table, is that when joining multiple shift registers together, you should connect the SRCLK, RCLK, and SRCLR pins of all the shift registers together.
 
--- TIMING --
+## Circuit Diagram
 
 Disconnect the Arduino board from the computer and construct the circuit pictured on this page.  
 _\*_ ADD-ON to existing!!!
