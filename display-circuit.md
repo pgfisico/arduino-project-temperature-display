@@ -3,6 +3,7 @@
 You will now build the display, so that the temperature can be displayed on it rather than the computer. The display will be made up of the following components.
 
 > #### Warning::ESD Sensitive
+>
 > The 7-segment displays and shift registers are ESD sensitive
 
 ## 7-Segment Display
@@ -62,6 +63,7 @@ If you were to transmit this message in parallel, you could use eight pieces of 
 | 8 | Low |
 
 > #### Info::Universal Serial Bus
+>
 > The Universal Serial Bus \(USB\) transmits data serially. It does however use two wires for _differential signaling_ instead of a single wire to protect the signals from interference. This is important when the signals travel over long cables that are near other cables.
 
 Returning to the shift register you will use to control the displays, you might be able to guess what a serial-in, parallel-out shift register is now that you know what serial and parallel communication is. The shift register uses a single wire to receive data and outputs multiple pieces of data in parallel. The shift register you are using is an 8-bit shift register, so it has 8 parallel outputs. This is enough outputs to control all the segments on a single display.
@@ -70,7 +72,7 @@ The shift register is called a shift register because it shifts the single seria
 
 ![](/assets/SIPO-Shift-Register.png)
 
-The shift register you are using in this project uses the power supply voltage as a high voltage (in this case, 5 volts), and ground as a low voltage (recall ground is the reference point for voltage, so it has the value of 0 volts). Since the grounds of the Arduino and the shift register are connected together, both the Arduino and shift register have a common point of reference for 0 volts.
+The shift register you are using in this project uses the power supply voltage as a high voltage \(in this case, 5 volts\), and ground as a low voltage \(recall ground is the reference point for voltage, so it has the value of 0 volts\). Since the grounds of the Arduino and the shift register are connected together, both the Arduino and shift register have a common point of reference for 0 volts.
 
 ### Clock Signals
 
@@ -83,6 +85,7 @@ The shift register you are using in this project is _positive-edge triggered_. T
 ![](/assets/Clock-Signal.png)
 
 > #### Info::Universal Serial Bus
+>
 > The Universal Serial Bus \(USB\) does not use a clock signal. Instead, it modifies the serial data signal so that it doesn't stay high or low for too long. This means that changes from low to high or high to low occur frequently enough for the receiver to perform _clock recovery_.
 
 ### Storage Register
@@ -96,6 +99,25 @@ The SRCLK and RCLK signals are the clock signals for the shift register and stor
 ![](/assets/SN74HC595N_Logic-Diagram.PNG)
 
 ### Dual In-Line Package
+
+The shift register you are using in this project comes in what is known as a Dual In-Line Package \(DIP\). A Dual In-Line Package consists of a rectangular part with two rows of parallel pins. The channel in the center of your breadboard is the correct size to allow the shift register to be placed with one row of pins on each side of the channel. Recall that these two halves of the breadboard are not electrically connected, meaning the rows of pins on the shift register are not connected. Dual In-Line Packages are popular when using breadboards because they are easy to place in the breadboard this way.
+
+Dual In-Line Packages usually have a notch or other marking to indicate which pin is pin number one. Pins are then numbered counterclockwise, starting from pin number one. You can see this numbering in the pin diagram from the shift register's datasheet below.
+
+![](/assets/SN74HC595N_Pin-Diagram.PNG)
+
+The following table explains the function of each pin on the shift register.
+
+| **Pin Number** | **Pin Name** | **Function** |
+| :--- | :--- | :--- |
+| 16 | V~CC~ | Power supply |
+| 8 | GND | Ground |
+| 15, 1, 2, 3, 4, 5, 6, 7 | Q~A~, Q~B~, Q~C~, Q~D~, Q~E~, Q~E~, Q~F~, Q~G~  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+|  |  |  |
 
 * Notch, pin numbering
   -- OE / Tri-state
@@ -113,3 +135,6 @@ _\*_ ADD-ON to existing!!!
 > #### Success::Check your Circuit
 >
 > Before continuing, check your circuit to confirm it is wired correctly
+
+
+
