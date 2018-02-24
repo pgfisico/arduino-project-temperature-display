@@ -106,7 +106,7 @@ The shift register you are using in this project comes in what is known as a Dua
 >
 > It is easy to bend or break some of the pins off the package if it is forced into a breadboard without all the pins being aligned with the holes, or if inserted or removed at an angle.
 >
-> Please ask for help if you have trouble inserting or removing DIPs from the breadboard. We have a tool that makes it easier to remove DIPs from the breadboard.
+> Please ask for help if you have trouble inserting or removing DIPs from the breadboard. We have a tool to help remove DIPs from the breadboard.
 
 Dual In-Line Packages usually have a notch or other marking to indicate which pin is pin number one. Pins are then numbered counterclockwise, starting from pin number one. You can see this numbering in the pin diagram from the shift register's datasheet below.
 
