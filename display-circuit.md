@@ -66,7 +66,7 @@ If you were to transmit this message in parallel, you could use eight pieces of 
 
 > #### Info::Universal Serial Bus
 >
-> The Universal Serial Bus \(USB\) transmits data serially. It does however use two wires for _differential signaling_ instead of a single wire to protect the signals from interference. This is important when the signals travel over long cables that are near other cables.
+> The Universal Serial Bus \(USB\) transmits data serially. It does however use two wires for _differential signaling_ instead of a single wire to protect the signals from interference. This is important when the signals travel over long cables or if cables are close to each other.
 
 The serial-in, parallel-out shift register you are using requires a single input wire to send it data serially, and provides outputs using multiple wires. The shift register you are using is an 8-bit shift register, so it has 8 parallel outputs. This is enough outputs to control all the segments on a single display.
 
@@ -78,21 +78,17 @@ To use the shift register to control the display, you will connect the shift reg
 
 Although not shown in the diagram, the shift register also has a serial output that will have the previous value of output 8 every time a new input is shifted in. This output allows you to connect multiple shift registers together, expanding the number of outputs while continuing to only use the single serial input from the Arduino. You will connect both shift registers together using this output so that you can control both 7-segment displays. You would then send two messages to the first shift register, one for each digit in the display. The first message shifts into the second shift register when you send the second message. Alternatively, you could think of the connected shift registers as acting like one big shift register, and the big message made up of the two small messages shifts into the big shift register.
 
-
----
-TODO EDIT PASS BELOW
-
 The shift register you are using in this project uses the power supply voltage as a high voltage \(in this case, 5 volts\), and ground as a low voltage \(recall ground is the reference point for voltage, so it has the value of 0 volts\). Since the grounds of the Arduino and the shift register are connected together, both the Arduino and shift register have a common point of reference for 0 volts, allowing them to communicate correctly.
 
 ### Clock Signals
 
 After reading the previous section about serial and parallel communication, you might be wondering how you synchronize the transmitter and receiver so that the receiver measures the voltage at the right time. If the receiver was measuring slower than the transmitter was transmitting, it would miss portions of the message. It might also measure while the sender is changing the voltage from low to high or high to low, and could measure the opposite of what the sender intended because the voltage is somewhere between the low and high values. Alternatively, if the receiver is measuring faster than the transmitter is transmitting, it could receive extra parts of the message that the transmitter doesn't intend to send. It could also end up measuring when the voltage is changing as described previously.
 
-To synchronize digital circuits, a clock signal is commonly used. A clock signal is shown in the timing diagram below. Time is shown from left to right. The green line represents the voltage of the clock signal. The horizontal dashed yellow lines indicate the low and high voltage levels. When the green line is at the same level as the bottom yellow line, the clock signal is at the low voltage, and when it is at the same level as the top yellow line, it is at the high voltage.
-
-The shift register you are using in this project is _positive-edge triggered_. This means that the shift register shifts the serial input into the output every time the clock signal changes from low to high. These transitions are marked using white arrows in the timing diagram. There are numerous other specific timing constraints needed for the shift register to operate properly, but you don't need to worry about these. Look up the data sheet for the shift register you're using if you're interested in learning more.
+To synchronize digital circuits, a clock signal is commonly used. A clock signal is shown in the timing diagram below. Time is shown from left to right. The green line represents the voltage of the clock signal. The horizontal dashed yellow lines indicate the low and high voltage levels. When the green line is at the same level as the bottom yellow line, the clock signal has a low voltage, and when it is at the same level as the top yellow line, it has a high voltage. One part of the circuit generates the clock signal, and the other parts follow the clock signal. In this case, the Arduino will generate the clock signal so the shift register knows when to shift the serial input into the parallel outputs.
 
 ![](/assets/Clock-Signal.png)
+
+The shift register you are using in this project is _positive-edge triggered_. This means that the shift register shifts the serial input into the output every time the clock signal changes from low to high. These transitions are marked using white arrows in the timing diagram. There are numerous other specific timing constraints needed for the shift register to operate properly, but you don't need to worry about these. Look up the data sheet for the shift register if you're interested in learning more.
 
 > #### Info::Universal Serial Bus
 >
@@ -100,21 +96,21 @@ The shift register you are using in this project is _positive-edge triggered_. T
 
 ### Storage Register
 
-The shift register you are using in this project actually has two separate registers, the shift register and a separate storage register. The storage register contains the high and low values that are actually output from the pins on the shift register, and the shift register provides inputs to the storage register. This arrangement means that the output on the shift register pins will not change while you shift in new data. The outputs will only change once you copy the data from the shift register to the storage register. This is useful for a display, because it prevents different segments from flickering while the display changes.
+The shift register you are using in this project actually has two separate registers, the shift register and a separate storage register. The storage register contains the high and low values that are actually output from the pins on the shift register, and the shift register provides inputs to the storage register. This arrangement means that the output on the shift register pins will not change while you shift in new data. The outputs will only change once you copy the data from the shift register to the storage register. This is useful for a display, because it prevents different segments from flickering while new data is shifted into the register.
 
-You can see the two different registers in the logic diagram from the shift register's datasheet below. The logic diagram provides a description of how the shift register's inputs and outputs operate. You don't need to understand all the symbols in the diagram for this project. The shift register is the vertical row of boxes closest to the left, while the storage register is the vertical row of boxes on the right. Each box can store a single low or high signal. Note that all the boxes in the shift register are connected to the signal named SRCLK in the top left corner, while all the boxes in the storage register are connected to the signal named RCLK. You can also see that the connections in the shift register go between each box from top to bottom, while the storage register does not have these connections. Instead, each box in the storage register is connected to the corresponding box in the shift register.
-
-The SRCLK and RCLK signals are the clock signals for the shift register and storage register respectively. This means that SRCLK is used as the clock to shift new data into the shift register, while RCLK is used the clock to send data to the storage register. Data shifts through the shift register serially, while data is stored in the storage register in parallel. Positive edges in the RCLK signal cause the storage register to copy all eight values from the shift register to the storage register in parallel. When the data is copied into the storage register, the output on the pins of the shift register changes.
+You can see the two different registers in the logic diagram from the shift register's datasheet below. The logic diagram provides a description of how the shift register's inputs and outputs operate (You don't need to understand all the symbols in the diagram for this project). The shift register is the vertical row of boxes closest to the left, while the storage register is the vertical row of boxes on the right. Each box can store a single low or high signal. Note that all the boxes in the shift register are connected to the signal named SRCLK in the top left corner, while all the boxes in the storage register are connected to the signal named RCLK. You can also see that the connections in the shift register go between each box from top to bottom, while the storage register does not have these connections. Instead, each box in the storage register is connected to the corresponding box in the shift register.
 
 ![](/assets/SN74HC595N_Logic-Diagram.PNG)
 
+The SRCLK and RCLK signals are the clock signals for the shift register and storage register respectively. This means that SRCLK is used as the clock to shift new data into the shift register, while RCLK is used the clock to send data to the storage register. Data shifts through the shift register serially, while data is stored in the storage register in parallel. Positive edges in the RCLK signal cause the storage register to copy all eight values from the shift register to the storage register in parallel. When the data is copied into the storage register, the output on the pins of the shift register changes.
+
 ### Dual In-Line Package
 
-The shift register you are using in this project comes in what is known as a Dual In-Line Package \(DIP\). A Dual In-Line Package consists of a rectangular part with two rows of parallel pins. The channel in the center of your breadboard is the correct size to allow the shift register to be placed with one row of pins on each side of the channel. Recall that these two halves of the breadboard are not electrically connected, meaning the rows of pins on the shift register are not connected. Dual In-Line Packages are popular when using breadboards because they are easy to place in the breadboard this way.
+The shift register you are using in this project comes in what is known as a Dual In-Line Package \(DIP\). A Dual In-Line Package consists of a rectangular part with two rows of parallel pins. The channel in the center of your breadboard is the correct size to allow the shift register to be placed with one row of pins on each side of the channel. Recall that these two halves of the breadboard are not electrically connected, meaning the rows of pins on the shift register will remain electrically separated. Dual In-Line Packages are popular when using breadboards because they are easy to place in the breadboard this way.
 
-> #### Warning::Be careful when Inserting or Removing DIPs from a Breadboard
+> #### Warning::Be careful when inserting or removing DIPs from a breadboard
 >
-> It is easy to bend or break some of the pins off the package if it is forced into a breadboard without all the pins being aligned with the holes, or if inserted or removed at an angle.
+> It is easy to bend or break some of the pins off the package if it is forced into a breadboard without all the pins being aligned with the holes, or if it is inserted or removed at an angle.
 >
 > Please ask for help if you have trouble inserting or removing DIPs from the breadboard. We have a tool to help remove DIPs from the breadboard.
 
@@ -136,22 +132,20 @@ The following table explains the function of each pin on the shift register.
 | 10 | SRCLR | Shift register clear<br/><br/>The line above this pin's name indicates that it is _active low_. This means that connecting this pin to ground will reset all the data in the shift register to low values. |
 | 13 | OE | Output enable<br/><br/>The line above this pin's name indicates that it is _active low_. This means that connecting this pin to ground enables the shift register's output. If this pin is connected to the power supply voltage, the output pins of the shift register are disconnected and do not provide power. |
 
-An additional piece of information not mentioned in the above table is that when joining multiple shift registers together, you should connect the SRCLK, RCLK, and SRCLR pins of all the shift registers together.
+As explained in the above table, to connect two shift registers together you connect the serial output of the first register to the serial input of the next register. You will also connect the SRCLK, RCLK, and SRCLR pins of all the shift registers together. Connecting the clock pins together causes all the shift registers to shift and store data at the same time. Connecting the clear pins together allows you to clear all the shift registers at once.
 
 ## Circuit Diagram
 
 Disconnect the Arduino board from the computer and construct the circuit pictured on this page.  
 
-_\*_ ADD-ON to existing!!!
-
-\*\* INFO??
-Place the shift register in the breadboard in the exact position identified in the circuit diagram, so you do not have to move it later.
-
--- NOte that caps are reused here - close to IC, add img with circles??
-
-Explain diagonal rresistors
-
-Provide labelled A-H outputs for shift register outs
+---
+# TODO
+- Add on to the previous circuit
+- INFO?? Place the shift register in the breadboard in the exact position identified in the circuit diagram, so you do not have to move it later.
+- Caps are reused here - close to IC, add img with circles??
+- Provide labelled A-H outputs for shift register outs
+- Explain diagonal resistors
+---
 
 ![](/assets/complete_circuit_breadboard.png)
 
