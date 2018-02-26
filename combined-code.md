@@ -1,4 +1,4 @@
-# Combined Code??
+# Combined Code
 
 ---
 
@@ -45,7 +45,7 @@ void setup() {
 
 void loop() {
   int adcValue = analogRead(TEMPERATURE_ANALOG_PIN);
-  
+
   float millivolts = (((float) adcValue * 5) / 1024) * 1000;
   float temperature = (millivolts - ZERO_DEGREE_CELSIUS_MILLIVOLTS) / MILLIVOLTS_PER_DEGREE_CELSIUS;
   int roundedTemperature = round(temperature);
@@ -54,10 +54,10 @@ void loop() {
   int onesDigit = constrain(roundedTemperature % 10, 0, 9);
 
   digitalWrite(STORAGE_CLOCK_PIN, LOW);
-  
+
   shiftOut(SERIAL_DATA_PIN, SHIFT_CLOCK_PIN, LSBFIRST, digits[onesDigit]);
   shiftOut(SERIAL_DATA_PIN, SHIFT_CLOCK_PIN, LSBFIRST, digits[tensDigit]);
-  
+
   digitalWrite(STORAGE_CLOCK_PIN, HIGH);
 
   delay(DELAY_MILLISECONDS);
