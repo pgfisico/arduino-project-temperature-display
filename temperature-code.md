@@ -20,7 +20,8 @@ void setup() {
 }
 
 void loop() {
-  int adcValue = analogRead(TEMPERATURE_ANALOG_PIN);
+  // TODO use analogRead(pin) to read the voltage on TEMPERATURE_ANALOG_PIN
+  int adcValue = 0;
 
   float millivolts = (((float) adcValue * 5) / 1024) * 1000;
   float temperature = (millivolts - ZERO_DEGREE_CELSIUS_MILLIVOLTS) / MILLIVOLTS_PER_DEGREE_CELSIUS;
@@ -81,11 +82,31 @@ const float MILLIVOLTS_PER_DEGREE_CELSIUS = 19.5;
 ```
 {% endreveal %}
 
-
 The last constant, `DELAY_MILLISECONDS`, is the delay in milliseconds between temperature measurements.
 
 ## Setup
-TODO
+The code in the `setup()` function initializes the serial port so that the Arduino can display the measured temperature on the Serial Monitor in the Arduino IDE.
 
 ## Loop
-TODO
+The first thing the loop function does is read the voltage from the temperature sensor, however this line is not complete. To read the analog input pins, use the `analogRead(pin)` function. `pin` is the pin which will be read. **Update the code to set `adcValue` to the value measured from the analog input where the temperature sensor output is connected.** If you get stuck try looking at the hints or answer below.
+
+**Hint #1**
+{% reveal text="Click to reveal Hint #1" %}
+The analog input pin the temperature sensor is connected to is already assigned to the constant `TEMPERATURE_ANALOG_PIN`.
+{% endreveal %}
+
+**Hint #2**
+{% reveal text="Click to reveal Hint #2" %}
+`analogRead(3)` would read the analog input A3. The 3 can be replaced with the name of a variable or constant that is set to the pin to read.
+{% endreveal %}
+
+**Answer**
+{% reveal text="Click to reveal Answer" %}
+```c
+int adcValue = analogRead(TEMPERATURE_ANALOG_PIN);
+```
+{% endreveal %}
+
+After reading the analog pin, the temperature is calculated. First the `adcValue` is converted into `millivolts`, and then the `temperature` is calculated using the constants already defined. The variables `millivolts` and `temperature` have the type `float` and not the type `int`. This is because `float` can be used to represent numbers with decimal places, while `int` cannot. Since the display you are going to build will not have any decimal places, the temperature is rounded and stored in an `int` variable named `roundedTemperature`. The `roundedTemperature` value is then sent over the serial port to the computer.
+
+The `loop()` function then waits before measuring the temperature again using the `delay()` function.
