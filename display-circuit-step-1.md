@@ -15,7 +15,11 @@ Disconnect the Arduino board from the computer and construct the circuit picture
 - Explain diagonal resistors
 ---
 
-![](/assets/complete_circuit_breadboard.png)
+
+![](/assets/display_step1_breadboard.png)
+
+![](/assets/prototype_step1.jpg)
+
 
 > #### Success::Check your Circuit
 >
