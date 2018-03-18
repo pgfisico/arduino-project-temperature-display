@@ -4,6 +4,8 @@
 
 # TODO
 
+-- Consider making this display test page, don't explain how the code works. Cover in the Combined code with the LUT
+
 ```c
 const int SERIAL_DATA_PIN = 3;
 const int SHIFT_CLEAR_PIN = 4;

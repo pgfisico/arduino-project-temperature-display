@@ -14,6 +14,3 @@ In this project, you will build a temperature sensor with a two-digit display. T
 | 16 | 430Ω ±5% 1/4W Through Hole Resistor | Various | - | - |
 | 3 | Ceramic 0.1µF ±20% 50VDC Through Hole Capacitor | Various | - | - |
 | - | Hookup and jumper wire | Various | - | - |
-
-
-
