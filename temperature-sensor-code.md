@@ -57,7 +57,7 @@ These constants are not currently set correctly. **Using the portion of the temp
 >
 > This temperature sensor you are using is the MCP9701A. The datasheet contains values for several different models. Be sure to pick the right ones.
 
-![](/assets/MCP9701A_DC_Electrical_Characteristics.PNG)
+![](/assets/datasheet/MCP9701A_DC_Electrical_Characteristics.png)
 
 **Hint #1**
 {% reveal text="Click to reveal Hint #1" %}

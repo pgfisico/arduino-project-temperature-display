@@ -82,7 +82,7 @@ The shift register you are using in this project actually has two separate regis
 
 You can see the two different registers in the logic diagram from the shift register's datasheet below. The logic diagram provides a description of how the shift register's inputs and outputs operate (You don't need to understand all the symbols in the diagram for this project). The shift register is the vertical row of boxes closest to the left, while the storage register is the vertical row of boxes on the right. Each box can store a single low or high signal. Note that all the boxes in the shift register are connected to the signal named SRCLK in the top left corner, while all the boxes in the storage register are connected to the signal named RCLK. You can also see that the connections in the shift register go between each box from top to bottom, while the storage register does not have these connections. Instead, each box in the storage register is connected to the corresponding box in the shift register.
 
-![](/assets/SN74HC595N_Logic-Diagram.PNG)
+![](/assets/datasheet/SN74HC595N_Logic-Diagram.png)
 
 The SRCLK and RCLK signals are the clock signals for the shift register and storage register respectively. This means that SRCLK is used as the clock to shift new data into the shift register, while RCLK is used the clock to send data to the storage register. Data shifts through the shift register serially, while data is stored in the storage register in parallel. Positive edges in the RCLK signal cause the storage register to copy all eight values from the shift register to the storage register in parallel. When the data is copied into the storage register, the output on the pins of the shift register changes.
 
@@ -98,7 +98,7 @@ The shift register you are using in this project comes in what is known as a Dua
 
 Dual In-Line Packages usually have a notch or other marking to indicate which pin is pin number one. Pins are then numbered counterclockwise, starting from pin number one. You can see this numbering in the pin diagram from the shift register's datasheet below.
 
-![](/assets/SN74HC595N_Pin-Diagram.PNG)
+![](/assets/datasheet/SN74HC595N_Pin-Diagram.png)
 
 The following table explains the function of each pin on the shift register.
 

@@ -6,7 +6,7 @@ Disconnect the Arduino board from the computer and construct the circuit picture
 
 In the circuit pictured below, the flat side of the temperature sensor is facing the empty half of the breadboard. It is important to orient the the temperature sensor this way so that you do not connect the power backwards. With the flat side of the sensor facing you, the pins have the following functions from left to right: power, sensor output, ground. See the pin diagram below from the sensor's datasheet below.
 
-![](/assets/MCP9701A_TO-92_Pinout.PNG)
+![](/assets/datasheet/MCP9701A_TO-92_Pinout.png)
 
 The blue component (the one you have might not be blue) behind the temperature sensor is a 0.1µF \(0.1 microfarad\) capacitor. It should be placed as close as possible to the temperature sensor, and is connected across the power and ground pins of the sensor.
 
@@ -18,8 +18,8 @@ The blue component (the one you have might not be blue) behind the temperature s
 >
 > The capacitor you are using in this circuit can be connected either way. It does not matter which pin is connected to 5 volts and which is connected to ground. Note that other types of capacitors are polarized, meaning there is a specific way they must be connected.
 
-<a href="/assets/temperature_sensor_breadboard.png" target="_blank">View Full Size</a>
-![](/assets/temperature_sensor_breadboard.png)
+<a href="/assets/temperature-circuit/breadboard.png" target="_blank">View Full Size</a>
+![](/assets/temperature-circuit/breadboard.png)
 
 > #### Success::Check your Circuit
 >

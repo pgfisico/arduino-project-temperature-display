@@ -1,4 +1,4 @@
 # Display Circuit - Step 4
 
-![](/assets/display_step4_breadboard.png)
-![](/assets/prototype_step4.jpg)
+![](/assets/display-circuit/breadboard_step4.png)
+![](/assets/display-circuit/prototype_step4.jpg)

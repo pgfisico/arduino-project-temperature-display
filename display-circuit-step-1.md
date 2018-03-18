@@ -16,9 +16,9 @@ Disconnect the Arduino board from the computer and construct the circuit picture
 ---
 
 
-![](/assets/display_step1_breadboard.png)
+![](/assets/display-circuit/breadboard_step1.png)
 
-![](/assets/prototype_step1.jpg)
+![](/assets/display-circuit/prototype_step1.jpg)
 
 
 > #### Success::Check your Circuit
