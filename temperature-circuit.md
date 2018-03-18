@@ -28,6 +28,7 @@ The blue component (the one you have might not be blue) behind the temperature s
 >
 > The capacitor you are using in this circuit can be connected either way. It does not matter which pin is connected to 5 volts and which is connected to ground. Note that other types of capacitors are polarized, meaning there is a specific way they must be connected.
 
+[View Original](/assets/temperature_sensor_breadboard.png)
 ![](/assets/temperature_sensor_breadboard.png)
 
 > #### Success::Check your Circuit
