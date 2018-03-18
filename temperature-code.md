@@ -58,22 +58,21 @@ These constants are not currently set correctly. **Using the portion of the temp
 
 ![](/assets/MCP9701A_DC_Electrical_Characteristics.PNG)
 
-&nbsp;
 {% reveal text="Click to reveal Hint #1" %}
 **Hint #1**
 Look at the last portion of the table, titled "Sensor Output"
 {% endreveal %}
-&nbsp;
+
 {% reveal text="Click to reveal Hint #2" %}
 **Hint #2**
 `ZERO_DEGREE_CELSIUS_MILLIVOLTS` should be set to the value for "Output Voltage, T<sub>A</sub> = 0&deg;C"
 {% endreveal %}
-&nbsp;
+
 {% reveal text="Click to reveal Hint #3" %}
 **Hint #3**
 `MILLIVOLTS_PER_DEGREE_CELSIUS` should be set to the value for "Temperature Coefficient"
 {% endreveal %}
-&nbsp;
+
 {% reveal text="Click to reveal Answer" %}
 **Answer**
 ```c
@@ -81,7 +80,6 @@ const float ZERO_DEGREE_CELSIUS_MILLIVOLTS = 400;
 const float MILLIVOLTS_PER_DEGREE_CELSIUS = 19.5;
 ```
 {% endreveal %}
-&nbsp;
 
 The last constant, `DELAY_MILLISECONDS`, is the delay in milliseconds between temperature measurements.
 
