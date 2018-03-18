@@ -3,6 +3,8 @@
 ---
 
 # TODO
+- Have students generate LUT
+- Have students wrap shiftOut with SRCLK strobe
 
 ```c
 const int TEMPERATURE_ANALOG_PIN = 0;

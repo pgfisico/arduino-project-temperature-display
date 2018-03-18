@@ -4,7 +4,9 @@
 
 # TODO
 
--- Consider making this display test page, don't explain how the code works. Cover in the Combined code with the LUT
+- Consider making this display test page, don't explain how the code works. Cover in the Combined code with the LUT
+- Error in code, should shift twice...
+- Is it necessary to test display position??
 
 ```c
 const int SERIAL_DATA_PIN = 3;
