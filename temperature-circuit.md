@@ -2,16 +2,6 @@
 
 Before building the display, you will connect the temperature sensor to the Arduino and display the temperature on the Serial Monitor in the Arduino IDE.
 
-> #### Warning::ESD Sensitive
->
-> The temperature sensor is ESD sensitive
-
-## Temperature Sensor
-
-The temperature sensor you will use in this project indicates the measured temperature by changing the voltage on one of its pins. You can measure the voltage on this pin by connecting it to the analog input pins on the Arduino. Using the Arduino's analog to digital converter \(ADC\), you can use the numerical voltage value and information from the sensor manufacturer to calculate the temperature.
-
-## Circuit Diagram
-
 Disconnect the Arduino board from the computer and construct the circuit pictured on this page. The 5V and ground connections to the bottom of the breadboard will be used later when building the display. Place the temperature sensor exactly where indicated so that you have enough space to build the display on the rest of the breadboard later.
 
 In the circuit pictured below, the flat side of the temperature sensor is facing the empty half of the breadboard. It is important to orient the the temperature sensor this way so that you do not connect the power backwards. With the flat side of the sensor facing you, the pins have the following functions from left to right: power, sensor output, ground. See the pin diagram below from the sensor's datasheet below.
@@ -33,7 +23,4 @@ The blue component (the one you have might not be blue) behind the temperature s
 
 > #### Success::Check your Circuit
 >
-> Before continuing, check your circuit to confirm it is wired correctly
-
-
-
+> Before continuing, check your circuit to confirm it is wired correctly. Ask a mentor to double check the circuit after you have checked it.
