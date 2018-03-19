@@ -4,9 +4,11 @@
 
 # TODO
 
-- Consider making this display test page, don't explain how the code works. Cover in the Combined code with the LUT
-- Error in code, should shift twice...
-- Is it necessary to test display position??
+* Consider making this display test page, don't explain how the code works. Cover in the Combined code with the LUT
+* Is it necessary to test display position?? \(Displays currently mirror\)
+* Add demo of what a successful test looks like
+
+---
 
 ```c
 const int SERIAL_DATA_PIN = 3;
@@ -35,7 +37,10 @@ void loop() {
   // Test each segment
   while (b != 0) {
     digitalWrite(STORAGE_CLOCK_PIN, LOW);
+    
     shiftOut(SERIAL_DATA_PIN, SHIFT_CLOCK_PIN, LSBFIRST, b);
+    shiftOut(SERIAL_DATA_PIN, SHIFT_CLOCK_PIN, LSBFIRST, b);
+    
     digitalWrite(STORAGE_CLOCK_PIN, HIGH);
 
     b >>= 1;
@@ -44,7 +49,10 @@ void loop() {
 
   // Test blank
   digitalWrite(STORAGE_CLOCK_PIN, LOW);
+
   shiftOut(SERIAL_DATA_PIN, SHIFT_CLOCK_PIN, LSBFIRST, b);
+  shiftOut(SERIAL_DATA_PIN, SHIFT_CLOCK_PIN, LSBFIRST, b);
+
   digitalWrite(STORAGE_CLOCK_PIN, HIGH);
 
   delay(DELAY_MILLISECONDS);

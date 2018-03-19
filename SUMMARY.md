@@ -12,6 +12,6 @@
 * [Display Circuit - Step 2](display-circuit-step-2.md)
 * [Display Circuit - Step 3](display-circuit-step-3.md)
 * [Display Circuit - Step 4](display-circuit-step-4.md)
-* [Display Code](display-code.md)
+* [Display Test](display-test.md)
 * [Combined Code](combined-code.md)
 

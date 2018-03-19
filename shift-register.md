@@ -104,7 +104,7 @@ The following table explains the function of each pin on the shift register.
 
 | **Pin Number** | **Pin Name** | **Function** |
 | :--- | :--- | :--- |
-| 16 | {% raw %} V<sub>CC</sub> {% endraw %} | Power supply |
+| 16 | V<sub>CC</sub> | Power supply |
 | 8 | GND | Ground |
 | 15, 1, 2, 3, 4, 5, 6, 7 | Q<sub>A</sub>, Q<sub>B</sub>, Q<sub>C</sub>, Q<sub>D</sub>, Q<sub>E</sub>, Q<sub>F</sub>, Q<sub>G</sub>,  | Shift register outputs<br/><br/>Outputs are in alphabetical order. A is the most recently shifted in data while H is the oldest data. |
 | 14 | SER | Serial input |
