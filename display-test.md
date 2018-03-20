@@ -2,14 +2,6 @@
 
 Create a new sketch in the Arduino IDE, and replace all the code in the sketch with the code from below. Don't worry if you don't understand how this code works; it is intended to be a quick test to make sure your display is wired correctly. The code will be explained later when you complete a combined program to display the temperature on the 7-segment displays.
 
----
-
-# TODO
-
-* Add demo of what a successful test looks like
-
----
-
 ```c
 const int SERIAL_DATA_PIN = 3;
 const int SHIFT_CLEAR_PIN = 4;
