@@ -15,7 +15,7 @@ In the circuit pictured below, the flat side of the temperature sensor is facing
 
 ![](/assets/datasheet/MCP9701A_TO-92_Pinout.png)
 
-The blue component (the one you have might not be blue) behind the temperature sensor is a 0.1µF \(0.1 microfarad\) capacitor. It should be placed as close as possible to the temperature sensor, and is connected across the power and ground pins of the sensor.
+The blue component (the one you have is yellow) behind the temperature sensor is a 0.1µF \(0.1 microfarad\) capacitor. It should be placed as close as possible to the temperature sensor, and is connected across the power and ground pins of the sensor.
 
 > #### Info::What's a capacitor?
 >
