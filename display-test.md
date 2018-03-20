@@ -1,5 +1,7 @@
 # Display Test
 
+Create a new sketch in the Arduino IDE, and replace all the code in the sketch with the code from below. Don't worry if you don't understand how this code works; it is intended to be a quick test to make sure your display is wired correctly. The code will be explained later when you complete a combined program to display the temperature on the 7-segment displays.
+
 ---
 
 # TODO
@@ -57,5 +59,14 @@ void loop() {
 }
 ```
 
+Connect the Arduino board to the computer and upload the program. The program will turn on one segment at a time on both displays (meaning the two displays should never display different things) to make sure they are wired correctly. It leaves the segment on for one second before testing the next segment.
 
+The program tests the segments repeatedly in the following order: A, B, C, D, E, F, G, DP, and then it makes the display blank. Refer to the diagram in the bottom right from the display's datasheet to identify which segment is which. **Verify that the segments on both displays light up in the correct order.**
 
+![](/assets/datasheet/INND-TS56YGCB_Pinout.png)
+
+> #### Success::The Display Works!
+>
+> If the display segments light up in the correct order, the display is working.
+>
+> If the display segments aren't lighting up in the right order, double check your circuit. If you can't figure out the problem, ask a mentor for help.
