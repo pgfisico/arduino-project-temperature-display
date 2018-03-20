@@ -13,5 +13,6 @@
 * [Display Circuit - Step 3](display-circuit-step-3.md)
 * [Display Circuit - Step 4](display-circuit-step-4.md)
 * [Display Test](display-test.md)
-* [Combined Code](combined-code.md)
+* [Temperature Sensor and Display Code](temperature-sensor-and-display-code.md)
+* [Temperature Sensor and Display Test](temperature-sensor-and-display-test.md)
 

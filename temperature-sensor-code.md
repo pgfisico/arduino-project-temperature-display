@@ -109,4 +109,4 @@ int adcValue = analogRead(TEMPERATURE_ANALOG_PIN);
 
 After reading the analog pin, the temperature is calculated. First the `adcValue` is converted into `millivolts`, and then the `temperature` is calculated using the constants already defined. The variables `millivolts` and `temperature` have the type `float` and not the type `int`. This is because `float` can be used to represent numbers with decimal places, while `int` cannot. Since the display you are going to build will not have any decimal places, the temperature is rounded and stored in an `int` variable named `roundedTemperature`. The `roundedTemperature` value is then sent over the serial port to the computer.
 
-The `loop()` function then waits before measuring the temperature again using the `delay()` function.
+At the end of the `loop()` function, the `delay()` function is used so that the program waits before measuring the temperature again.

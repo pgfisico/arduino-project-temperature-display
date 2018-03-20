@@ -1,8 +1,14 @@
-# Temperature Sensor Test
+# Temperature Sensor and Display Test
 
-Connect the Arduino board to the computer and upload the program. Then, open the Serial Monitor by clicking the icon in the top right corner of the Arduino IDE as shown below.
+---
 
-![](/assets/serial_monitor.png)
+#TODO
+
+---
+
+
+// Add scope display
+
 
 Watch the output in the Serial Monitor. **Make sure that the temperature it displays is close to room temperature.**
 
