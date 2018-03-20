@@ -70,7 +70,7 @@ To synchronize digital circuits, a clock signal is commonly used. A clock signal
 
 ![](/assets/Clock-Signal.png)
 
-The shift register you are using in this project is _positive-edge triggered_. This means that the shift register shifts the serial input into the output every time the clock signal changes from low to high. These transitions are marked using white arrows in the timing diagram. There are numerous other specific timing constraints needed for the shift register to operate properly, but you don't need to worry about these. Look up the data sheet for the shift register if you're interested in learning more.
+The shift register you are using in this project is _positive-edge triggered_. This means that the shift register shifts the serial input into the output every time the clock signal changes from low to high. These transitions are marked using white arrows in the timing diagram. There are numerous other specific timing constraints needed for the shift register to operate properly, but you don't need to worry about these. Look at the data sheet for the shift register if you're interested in learning more.
 
 > #### Info::Universal Serial Bus
 >

@@ -97,7 +97,7 @@ The analog input pin the temperature sensor is connected to is already assigned 
 
 **Hint #2**
 {% reveal text="Click to reveal Hint #2" %}
-`analogRead(3)` would read the analog input A3. The 3 can be replaced with the name of a variable or constant that is set to the pin to read.
+`int value = analogRead(3);` would read the analog input A3 and store the reading in an integer variable named `value`. The 3 can be replaced with the name of a variable or constant that is set to the pin to read.
 {% endreveal %}
 
 **Answer**
