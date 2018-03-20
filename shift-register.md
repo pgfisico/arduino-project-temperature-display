@@ -31,7 +31,7 @@ If you were to transmit this message serially, you could use a single piece of w
 15. Connect wire to **low** voltage
 16. Wait
 
-The time spent waiting is to provide the enough time to measure the voltage at the receiving end of the wire.
+The time spent waiting is to provide enough time for the receiver to measure the voltage at the receiving end of the wire.
 
 If you were to transmit this message in parallel, you could use eight pieces of wire \(Again, you would also need a reference point for voltage measurements\). You would connect the wires at the sending end as follows, and wait a bit for the voltage to be measured at the receiving ends of the wires.
 
@@ -106,7 +106,7 @@ The following table explains the function of each pin on the shift register.
 | :--- | :--- | :--- |
 | 16 | V<sub>CC</sub> | Power supply |
 | 8 | GND | Ground |
-| 15, 1, 2, 3, 4, 5, 6, 7 | Q<sub>A</sub>, Q<sub>B</sub>, Q<sub>C</sub>, Q<sub>D</sub>, Q<sub>E</sub>, Q<sub>F</sub>, Q<sub>G</sub>,  | Shift register outputs<br/><br/>Outputs are in alphabetical order. A is the most recently shifted in data while H is the oldest data. |
+| 15, 1, 2, 3, 4, 5, 6, 7 | Q<sub>A</sub>, Q<sub>B</sub>, Q<sub>C</sub>, Q<sub>D</sub>, Q<sub>E</sub>, Q<sub>F</sub>, Q<sub>G</sub>, Q<sub>H</sub> | Shift register outputs<br/><br/>Outputs are in alphabetical order. A is the most recently shifted in data while H is the oldest data. |
 | 14 | SER | Serial input |
 | 9 | Q<sub>H'</sub> | Serial output of data which is shifted out of the shift register<br><br>This output can be connected to the input of another shift register to join them together. |
 | 11 | SRCLK | Shift register clock |

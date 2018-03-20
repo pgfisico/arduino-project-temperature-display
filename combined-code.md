@@ -3,9 +3,10 @@
 ---
 
 # TODO
-- Page name...
+- Better page title...
 - Have students generate LUT
 - Have students wrap shiftOut with SRCLK strobe
+- Scope capture (Maybe an additional page?? Somewhere else??)
 
 ---
 

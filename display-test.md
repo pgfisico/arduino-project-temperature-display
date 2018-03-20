@@ -1,11 +1,9 @@
-# Display Code
+# Display Test
 
 ---
 
 # TODO
 
-* Consider making this display test page, don't explain how the code works. Cover in the Combined code with the LUT
-* Is it necessary to test display position?? \(Displays currently mirror\)
 * Add demo of what a successful test looks like
 
 ---
