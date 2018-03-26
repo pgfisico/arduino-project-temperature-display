@@ -62,7 +62,6 @@ void loop() {
   shiftOut(SERIAL_DATA_PIN, SHIFT_CLOCK_PIN, LSBFIRST, digits[tensDigit]);
 
   // TODO Set STORAGE_CLOCK_PIN HIGH
-  digitalWrite(STORAGE_CLOCK_PIN, HIGH);
 
   delay(DELAY_MILLISECONDS);
 }
@@ -141,19 +140,21 @@ The calculation of both the `tensDigit` and `onesDigit` also involves the `const
 
 Ignoring the TODO item for now, the two calls to the `shiftOut()` function send the data to the shift register. The `shiftOut()` function needs to know which pin to use to send the data serially to the shift register (`SERIAL_DATA_PIN`) and which pin it should generate a clock signal on (`SHIFT_CLOCK_PIN`) so the shift register shifts the data in. It also needs to know what order to send the data in (`LSBFIRST`) and what byte of data to send. `LSBFIRST` means _least significant bit_ first, so the Arduino sends the rightmost bit to the shift register first. For example with the byte `11110000`, `LSBFIRST` means the Arduino sends the zeros to the shift register before the ones. The byte to send is looked up in the `digits` lookup table you completed earlier. This is done by `digits[onesDigit]` and `digits[tensDigit]` in the code. The key to look up in the table is in between the square brackets after `digits`. As explained before, the entries in `digits` are ordered so that they key used to look them up is the number you want to display. Note that the `onesDigit` is sent to the shift register before the `tensDigit`. This is because, as explained earlier, the `onesDigit` should be displayed on the rightmost display. The rightmost display is connected to the second shift register, so the data must shift through the first shift register before getting to the second shift register. Sending the `onesDigit` first shifts it into the first shift register, and sending the `tensDigit` next shifts the `onesDigit` out of the first shift register and into the second shift register, and shifts the `tensDigit` into the first shift register.
 
-Returning to the TODO item, recall from earlier that the shift register you are using has both a shift register and a storage register. To actually see the output on the display, you must copy the data from the shift register to the storage register. This is accomplished by creating a positive edge (low to high transition) on the `STORAGE_CLOCK_PIN`. To create the positive edge, before calling the the `shiftOut()` function, the `STORAGE_CLOCK_PIN` should be set `LOW`. After the calls to the `shiftOut()` function the data has been sent to the shift register, and the `STORAGE_CLOCK_PIN` should be set `HIGH`. **Update the code so that before sending data to the shift register, `STORAGE_CLOCK_PIN` is set `LOW`. After sending data to the shift register, set `STORAGE_CLOCK_PIN` `HIGH`**. If you get stuck try looking at the hints or answer below.
+Returning to the TODO item, recall from earlier that the shift register you are using has both a shift register and a storage register. To actually see the output on the display, you must copy the data from the shift register to the storage register. This is accomplished by creating a positive edge (low to high transition) on the `STORAGE_CLOCK_PIN`. To create the positive edge, before calling the the `shiftOut()` function, the `STORAGE_CLOCK_PIN` should be set `LOW`. After the calls to the `shiftOut()` function the data has been sent to the shift register, and the `STORAGE_CLOCK_PIN` should be set `HIGH`. **Update the code so that before sending data to the shift register, `STORAGE_CLOCK_PIN` is set `LOW`. After sending data to the shift register, set `STORAGE_CLOCK_PIN` `HIGH`**. If you get stuck try looking at the hint or answer below.
 
-**Hint #1**
-{% reveal text="Click to reveal Hint #1" %}
+**Hint**
+{% reveal text="Click to reveal Hint" %}
 `digitalWrite(STORAGE_CLOCK_PIN, LOW);` sets the `STORAGE_CLOCK_PIN` `LOW`.
 {% endreveal %}
 
 **Answer**
 {% reveal text="Click to reveal Answer" %}
 ```c
+// TODO Set STORAGE_CLOCK_PIN LOW
 digitalWrite(STORAGE_CLOCK_PIN, LOW);
 ```
 ```c
+// TODO Set STORAGE_CLOCK_PIN HIGH
 digitalWrite(STORAGE_CLOCK_PIN, HIGH);
 ```
 
