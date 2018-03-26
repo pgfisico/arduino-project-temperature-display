@@ -2,6 +2,9 @@
 
 In this project, you will build a temperature sensor with a two-digit display. The display will show the currently measured temperature from the sensor. The assembled project will look something like the picture below.
 
+{% raw %}
+<a href="/assets/prototype_complete.jpg" target="_blank">View Full Size</a>
+{% endraw %}
 ![](/assets/prototype_complete.jpg)
 
 ## Materials
